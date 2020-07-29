@@ -1,0 +1,4 @@
+type Query {
+  sayGoodbye: String!
+}
+#asdf
