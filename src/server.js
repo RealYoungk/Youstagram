@@ -6,9 +6,6 @@ import { GraphQLServer } from "graphql-yoga";
 import logger from "morgan";
 import schema from "./schema";
 import "./utils";
-import { sendSecretMail } from "./utils";
-
-sendSecretMail("9725394@naver.com", "123");
 
 const PORT = process.env.PORT;
 
