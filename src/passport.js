@@ -1,10 +1,10 @@
-import dotenv from "dotenv";
-import path from "path";
-dotenv.config({ path: path.resolve(__dirname, ".env") });
-
 import passport from "passport";
 import { Strategy, ExtractJwt } from "passport-jwt";
 import { prisma } from "../generated/prisma-client";
+
+import dotenv from "dotenv";
+import path from "path";
+dotenv.config({ path: path.resolve(__dirname, ".env") });
 
 const jwtOptions = {
   //토큰을 암호화하는거
@@ -36,3 +36,4 @@ export const authenticateJwt = (req, res, next) =>
 
 //해석된 정보를 콜백함수로 전달
 passport.use(new Strategy(jwtOptions, verifyUser));
+passport.initialize();
