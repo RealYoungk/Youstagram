@@ -5,13 +5,14 @@ import logger from "morgan";
 import schema from "./schema";
 import "./passport";
 import { authenticateJwt } from "./passport";
+import { isAuthenticated } from "./middlewares";
 
 const PORT = process.env.PORT || 4000;
 
 const server = new GraphQLServer({
   schema,
   // 리졸버들간 정보를 공유할때 사용
-  context: ({ request }) => ({ request }),
+  context: ({ request }) => ({ request, isAuthenticated }),
 });
 
 server.express.use(logger("dev"));
