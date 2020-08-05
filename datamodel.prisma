@@ -59,6 +59,6 @@ type Message{
 
 type UserProfile{
   id: ID! @id
-  user: User!
+  user: User
   post: [Post!]!
 }
