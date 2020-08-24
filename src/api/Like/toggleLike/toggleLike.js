@@ -39,7 +39,7 @@ export default {
           });
           return true;
         }
-      } catch {
+      } catch (error) {
         return false;
       }
     },
