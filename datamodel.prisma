@@ -1,6 +1,9 @@
 type User {
   id: ID! @id
   avatar: String
+  @default(
+      value: "https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F99EA8C3359DC92641A"
+    )
   username: String! @unique
   email: String! @unique
   firstName: String @default(value: "")
