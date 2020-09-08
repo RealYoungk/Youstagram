@@ -25,6 +25,7 @@ type Post {
   location: String
   caption: String!
   user: User! @relation(name: "PostsOfUser")
+  vod: String!
   files: [File!]! @relation(name: "FilesOfPost", onDelete:CASCADE)
   likes: [Like!]! @relation(name: "LikesOfPost", onDelete:CASCADE)
   comments: [Comment!]! @relation(name:"CommentsOfPost", onDelete:CASCADE)
