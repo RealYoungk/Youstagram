@@ -28,6 +28,7 @@ type Post {
   location: String
   caption: String!
   user: User!
+  vod: String!
   files: [File!]!
   likes: [Like!]!
   comments: [Comment!]!
