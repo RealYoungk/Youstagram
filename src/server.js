@@ -11,6 +11,7 @@ const PORT = process.env.PORT || 4000;
 
 const server = new GraphQLServer({
   schema,
+  //asdfasdf
   // 리졸버들간 정보를 공유할때 사용
   context: ({ request }) => ({ request, isAuthenticated }),
 });
