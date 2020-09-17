@@ -5,24 +5,24 @@ export default {
     upload: async (_, args, { request, isAuthenticated }) => {
       isAuthenticated(request);
       const { user } = request;
-      const { caption, vod, hashtags } = args;
+      const { caption, vod } = args;
       const post = await prisma.createPost({
         caption,
         vod,
         user: { connect: { id: user.id } },
       });
 
-      hashtags.forEach(
-        async (hashtag) =>
-          await prisma.createHashtag({
-            tag: hashtag,
-            post: {
-              connect: {
-                id: post.id,
-              },
-            },
-          })
-      );
+      // hashtags.forEach(
+      //   async (hashtag) =>
+      //     await prisma.createHashtag({
+      //       tag: hashtag,
+      //       post: {
+      //         connect: {
+      //           id: post.id,
+      //         },
+      //       },
+      //     })
+      // );
 
       return post;
     },
