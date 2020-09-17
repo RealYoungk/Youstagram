@@ -30,7 +30,6 @@ type Post {
   user: User!
   vod: String!
   hashtags: [Hashtag]
-  files: [File!]!
   likes: [Like!]!
   comments: [Comment!]!
   isLiked: Boolean!
@@ -60,14 +59,6 @@ type Comment {
   id: ID!
   text: String!
   user: User!
-  post: Post!
-  createdAt: String
-  updatedAt: String
-}
-
-type File {
-  id: ID!
-  url: String!
   post: Post!
   createdAt: String
   updatedAt: String

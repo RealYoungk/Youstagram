@@ -27,7 +27,6 @@ type Post {
   user: User! @relation(name: "PostsOfUser")
   vod: String!
   hashtags: [Hashtag] @relation(name: "HashtagOfPost")
-  files: [File!]! @relation(name: "FilesOfPost", onDelete:CASCADE)
   likes: [Like!]! @relation(name: "LikesOfPost", onDelete:CASCADE)
   comments: [Comment!]! @relation(name:"CommentsOfPost", onDelete:CASCADE)
   createdAt: DateTime! @createdAt
@@ -55,14 +54,6 @@ type Comment {
   text: String!
   user: User @relation(name: "CommentsOfUser")
   post: Post @relation(name: "CommentsOfPost")
-  createdAt: DateTime! @createdAt
-  updatedAt: DateTime! @updatedAt
-}
-
-type File {
-  id: ID! @id
-  url: String!
-  post: Post @relation(name: "FilesOfPost")
   createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt
 }
