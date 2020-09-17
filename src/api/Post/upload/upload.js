@@ -5,11 +5,12 @@ export default {
     upload: async (_, args, { request, isAuthenticated }) => {
       isAuthenticated(request);
       const { user } = request;
-      const { caption, files } = args;
+      const { caption, files, hashtags } = args;
       const post = await prisma.createPost({
         caption,
         user: { connect: { id: user.id } },
       });
+
       files.forEach(
         async (file) =>
           await prisma.createFile({
@@ -21,6 +22,19 @@ export default {
             },
           })
       );
+
+      hashtags.forEach(
+        async (hashtag) =>
+          await prisma.createHashtag({
+            tag: hashtag,
+            post: {
+              connect: {
+                id: post.id,
+              },
+            },
+          })
+      );
+
       //console.log(post);
       return post;
     },

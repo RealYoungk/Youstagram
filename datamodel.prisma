@@ -26,9 +26,18 @@ type Post {
   caption: String!
   user: User! @relation(name: "PostsOfUser")
   vod: String!
+  hashtags: [Hashtag] @relation(name: "HashtagOfPost")
   files: [File!]! @relation(name: "FilesOfPost", onDelete:CASCADE)
   likes: [Like!]! @relation(name: "LikesOfPost", onDelete:CASCADE)
   comments: [Comment!]! @relation(name:"CommentsOfPost", onDelete:CASCADE)
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+
+type Hashtag {
+  id: ID! @id
+  tag: String!
+  post: Post @relation(name: "HashtagOfPost")
   createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt
 }
