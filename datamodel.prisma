@@ -26,7 +26,7 @@ type Post {
   caption: String!
   user: User! @relation(name: "PostsOfUser")
   vod: String!
-  hashtags: [Hashtag] @relation(name: "HashtagOfPost")
+  hashtags: [Hashtag] @relation(name: "HashtagOfPost", onDelete: CASCADE)
   likes: [Like!]! @relation(name: "LikesOfPost", onDelete:CASCADE)
   comments: [Comment!]! @relation(name:"CommentsOfPost", onDelete:CASCADE)
   createdAt: DateTime! @createdAt
