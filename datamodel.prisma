@@ -14,8 +14,18 @@ type User {
   posts: [Post!]! @relation(name: "PostsOfUser", onDelete:CASCADE)
   likes: [Like!]! @relation(name: "LikesOfUser", onDelete:CASCADE)
   comments: [Comment!]! @relation(name: "CommentsOfUser", onDelete:CASCADE)
+  categories: [Category] @relation(name: "CategoriesOfUser", onDelete:CASCADE)
   rooms: [Room!]!
   loginSecret: String
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+
+type Category{
+  id: ID! @id
+  content: String!
+  index: Int!
+  user: User @relation(name: "CategoriesOfUser")
   createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt
 }
@@ -32,6 +42,7 @@ type Post {
   createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt
 }
+
 
 type Hashtag {
   id: ID! @id
@@ -75,3 +86,4 @@ type Message{
   createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt
 }
+
