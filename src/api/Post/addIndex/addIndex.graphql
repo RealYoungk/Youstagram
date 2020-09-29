@@ -1,0 +1,3 @@
+type Mutation {
+  addIndex(postId: String!, categoryId: String!): Post!
+}

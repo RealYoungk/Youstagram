@@ -13,7 +13,10 @@ export default {
       if (post) {
         if (action === EDIT) {
           return prisma.updatePost({
-            data: { caption, location },
+            data: {
+              caption,
+              location,
+            },
             where: { id },
           });
         } else if (action === DELETE) {
