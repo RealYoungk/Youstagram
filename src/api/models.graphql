@@ -18,7 +18,17 @@ type User {
   likes: [Like!]!
   comments: [Comment!]!
   rooms: [Room!]!
+  categories: [Category]
   loginSecret: String!
+  createdAt: String
+  updatedAt: String
+}
+
+type Category {
+  id: ID!
+  content: String!
+  index: Int!
+  user: User
   createdAt: String
   updatedAt: String
 }

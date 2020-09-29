@@ -1,0 +1,3 @@
+type Mutation {
+  addContent(content: String!, userId: String!, index: Int!): Category!
+}
