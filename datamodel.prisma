@@ -26,6 +26,7 @@ type Category{
   content: String!
   index: Int!
   user: User @relation(name: "CategoriesOfUser")
+  post: [Post] @relation(name: "CategoriesOfPost")
   createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt
 }
@@ -37,6 +38,7 @@ type Post {
   user: User! @relation(name: "PostsOfUser")
   vod: String!
   hashtags: [Hashtag] @relation(name: "HashtagOfPost", onDelete: CASCADE)
+  categories: [Category] @relation(name: "CategoriesOfPost")
   likes: [Like!]! @relation(name: "LikesOfPost", onDelete:CASCADE)
   comments: [Comment!]! @relation(name:"CommentsOfPost", onDelete:CASCADE)
   createdAt: DateTime! @createdAt

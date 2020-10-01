@@ -29,6 +29,7 @@ type Category {
   content: String!
   index: Int!
   user: User
+  post: Post
   createdAt: String
   updatedAt: String
 }
@@ -42,6 +43,7 @@ type Post {
   hashtags: [Hashtag]
   likes: [Like!]!
   comments: [Comment!]!
+  categories: [Category]
   isLiked: Boolean!
   likeCount: Int!
   commentCount: Int!

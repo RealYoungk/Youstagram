@@ -5,7 +5,7 @@ export default {
   Mutation: {
     addContent: async (_, args, { request, isAuthenticated }) => {
       isAuthenticated(request);
-      const { content, userId, index } = args;
+      const { content, userId, index, postId } = args;
       const { user } = request;
       const category = await prisma.createCategory({
         content: content,
@@ -15,6 +15,11 @@ export default {
             id: userId,
           },
         },
+        // post: {
+        //   connect: {
+        //     id: postId,
+        //   },
+        // },
       });
       return category;
     },
