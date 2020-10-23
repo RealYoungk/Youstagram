@@ -6,6 +6,7 @@
   "author": "realyoungk <9725394@naver.com>",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.20.0",
     "babel-node": "^0.0.1-security",
     "dotenv": "^8.2.0",
     "graphql-tools": "^6.0.15",
