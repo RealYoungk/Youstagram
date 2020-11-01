@@ -1,4 +1,4 @@
-endpoint: ${env:PRISMA_ENDPOINT}
+endpoint: "https://youstagram-prisma-8bfc30d42c.herokuapp.com/youstagram/dev"
 datamodel: datamodel.prisma
 
 generate:
