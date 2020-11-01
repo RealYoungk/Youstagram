@@ -1,6 +1,11 @@
 {
   "name": "youstagram",
   "version": "1.0.0",
+  "engines": {
+    "node": "12.14.0",
+    "npm": "6.13.4",
+    "yarn": "1.22.4"
+    },
   "description": "Instagram clone with Express + Prisma + React and React Native",
   "repository": "https://github.com/RealYoungk/YouStagram",
   "author": "realyoungk <9725394@naver.com>",
