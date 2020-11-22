@@ -6,6 +6,7 @@ export default {
     addIndex: async (_, args, { request }) => {
       isAuthenticated(request);
       const { postId, categoryId } = args;
+      const { id } = categoryId;
       const { user } = request;
 
       const post = await prisma.updatePost({

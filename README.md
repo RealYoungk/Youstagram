@@ -2,7 +2,9 @@
 
 Instagram clone with Express + Prisma + React and React Native
 
-## User Stories
+<br>
+
+### 📌 To-Do List
 
 - [x] Create account
 - [x] Request secret
@@ -24,3 +26,21 @@ Instagram clone with Express + Prisma + React and React Native
 - [x] See rooms
 - [x] See room
 - [x] Receive Message (RealTime)
+
+<br>
+
+### 🧑🏻‍💻 실행과정
+
+<br>
+
+1. 패키지 설치
+```
+yarn
+```
+
+<br>
+
+2. 서버 실행
+```
+yarn dev
+```
